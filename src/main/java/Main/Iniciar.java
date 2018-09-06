@@ -5,10 +5,15 @@
  */
 package Main;
 
+import javax.persistence.Persistence;
+
 /**
  *
  * @author a1744011
  */
 public class Iniciar {
-    
+    /*public static void main(String[] args) {
+        Persistence.createEntityManagerFactory("tds");
+    }*/
+
 }
