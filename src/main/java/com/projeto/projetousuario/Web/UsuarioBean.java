@@ -1,5 +1,7 @@
 package com.projeto.projetousuario.Web;
 
+import Repository.UsuarioDAOHibernate;
+import com.projeto.projetousuario.Model.Usuario;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
 import javax.faces.bean.ManagedBean;
@@ -12,18 +14,27 @@ public class UsuarioBean {
 	private String email;
 	private String senha;
 	private String confirmaSenha;
+        private Usuario usuario;
 	
 	public String novo() { //(_1_)
 		return "usuario";
 	}
 	public String salvar() { //(_2_)
 		FacesContext context = FacesContext.getCurrentInstance(); 
+                
 		if (!this.senha.equalsIgnoreCase(this.confirmaSenha)) {
 			context.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, 
 				"Senha confirmada incorretamente",""));
 			return "usuario"; //(_3_)
 		}
-		// FUTURO - salva o usu�rio
+		
+                usuario = new Usuario();
+                usuario.setNome(this.nome);
+                usuario.setEmail(this.email);
+                usuario.setSenha(this.senha);
+                
+                new UsuarioDAOHibernate().salvar(this.usuario);
+                
 		return "mostrausuario"; //(_4_)
 	}
 
