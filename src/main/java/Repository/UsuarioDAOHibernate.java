@@ -4,6 +4,7 @@ package Repository;
 import Repository.Interfaces.UsuarioDAO;
 import Repository.RepositoryDAO.ConexaoHibernate;
 import com.projeto.projetousuario.Model.Usuario;
+import com.projeto.projetousuario.Web.Messages.SaveBean;
 import java.util.List;
 import javax.persistence.EntityManager;
 import org.hibernate.Session;
@@ -32,6 +33,7 @@ public class UsuarioDAOHibernate implements UsuarioDAO {
         this.manager.persist(usuario);
         this.manager.flush();
         this.manager.getTransaction().commit();
+        new SaveBean().showMessage();
     }
 
     @Override
