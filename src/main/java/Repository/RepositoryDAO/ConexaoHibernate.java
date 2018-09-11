@@ -34,7 +34,7 @@ public class ConexaoHibernate {
                 if (manager == null) {
 
                     try {
-                        factory = Persistence.createEntityManagerFactory("FinanceiroUTFPR");
+                        factory = Persistence.createEntityManagerFactory("tds");
                         manager = factory.createEntityManager ();
                     } catch(HibernateException he)
                     {

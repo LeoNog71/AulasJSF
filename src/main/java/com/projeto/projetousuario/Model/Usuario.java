@@ -30,12 +30,8 @@ public class Usuario implements Serializable {
 	private String nome;
 	private String email;
 	@org.hibernate.annotations.NaturalId 
-	private String login;
 	private String senha;
-	private Date nascimento;
-	private String celular;
-	private String idioma;
-	private boolean ativo;
+
 	
 
 	public Integer getCodigo() {
@@ -61,15 +57,6 @@ public class Usuario implements Serializable {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public String getLogin() {
-		return login;
-	}
-
-	public void setLogin(String login) {
-		this.login = login;
-	}
-
 	public String getSenha() {
 		return senha;
 	}
@@ -78,36 +65,5 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 	}
 
-	public Date getNascimento() {
-		return nascimento;
-	}
-
-	public void setNascimento(Date nascimento) {
-		this.nascimento = nascimento;
-	}
-
-	public String getCelular() {
-		return celular;
-	}
-
-	public void setCelular(String celular) {
-		this.celular = celular;
-	}
-
-	public String getIdioma() {
-		return idioma;
-	}
-
-	public void setIdioma(String idioma) {
-		this.idioma = idioma;
-	}
-
-	public boolean isAtivo() {
-		return ativo;
-	}
-
-	public void setAtivo(boolean ativo) {
-		this.ativo = ativo;
-	}
-
+	
 }
